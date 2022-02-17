@@ -6,4 +6,4 @@ Automatizacion de un API para diferentes endpoints y Automatización de una bús
 2. libreria requests
 3. libreria selenium
 4. jsonpath
-5. descargar chromedriver de acuerdo al sistema operativo de su máquina.
+5. descargar chromedriver de acuerdo a la version del Chrome de su máquina.
