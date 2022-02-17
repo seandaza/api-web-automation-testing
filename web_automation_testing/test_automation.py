@@ -74,7 +74,7 @@ for i in range(1,4):
         driver2 = webdriver.Chrome('web_automation_testing\chromedriver.exe', chrome_options=opts) 
         driver2.get(link2.get_attribute('href'))
         #Agregando el producto a la carta
-        time.sleep(2)
+        time.sleep(3)
         button = driver2.find_element_by_xpath('//a[@class="btn btn-success btn-lg"]')
         button.click()
         time.sleep(1)
