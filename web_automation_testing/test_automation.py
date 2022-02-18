@@ -28,9 +28,9 @@ url = "https://www.demoblaze.com/"
 driver.get(url)
 
 
-
 n = 0
 productos = []
+#Recorrido Horizontal (Por Categorias)
 for i in range(1,4):
     
     #Identificando y seleccionando las Categorias
