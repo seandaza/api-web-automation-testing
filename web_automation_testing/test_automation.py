@@ -49,9 +49,12 @@ driver.get(url)
 
 n = 0
 for i in range(1,4):
-    i = str(i)
+
     #Identificando y seleccionando las Categorias
-    link = driver.find_element_by_xpath('/html/body/div[5]/div/div[1]/div/a[1+"'+i+'"]')
+    categorias = ["Phones", "Laptops", "Monitors"]
+    link = driver.find_element_by_xpath('/html/body/div[5]/div/div[1]/div/a[1+"'+str(i)+'"]')
+    #Validando que entra a las categorias
+    assert link.text == categorias[i-1], "No se encontro la categoria"
     time.sleep(1)
     link.click()
     time.sleep(1)
