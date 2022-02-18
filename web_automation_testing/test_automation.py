@@ -12,8 +12,6 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 
 
-
-
 #Inicializando Chrome
 opts = Options()
 opts.add_argument("user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/71.0.3578.80 Chrome/95.0.4638.54 Safari/537.36")
@@ -42,6 +40,8 @@ for i in range(1,4):
     time.sleep(1)
     link.click()
     time.sleep(1)
+    
+    #Indexando los productos por seleccionar
     index = [3,4,8,11,10,14]
     i = index[n]
     j = index[n+1]
