@@ -79,6 +79,8 @@ for i in range(1,4):
         #Agregando el producto a la carta
         time.sleep(3)
         button = driver2.find_element_by_xpath('//a[@class="btn btn-success btn-lg"]')
+        #validando que el boton esta disponible
+        assert button.text == "Add to cart", "No se encontro el boton de agregar a la carta"
         button.click()
         time.sleep(1)
         driver2.quit()
