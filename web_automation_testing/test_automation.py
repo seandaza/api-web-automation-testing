@@ -68,8 +68,7 @@ for i in range(1,4):
     print("n es igual a: ", n)
     #Recorrido vertical (por producto)
     for elm in indice:
-        i = str(elm)
-        link2 = driver.find_element_by_xpath('//a[@href="prod.html?idp_='+i+'"]')
+        link2 = driver.find_element_by_xpath('//a[@href="prod.html?idp_='+str(elm)+'"]')
         time.sleep(2)
         #Abriendo el producto en otra pagina
         opts = Options()
