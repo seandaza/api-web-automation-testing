@@ -98,6 +98,6 @@ for i in range(1,4):
         driver2.quit()
 time.sleep(1)
 
-#Validando que el tamaño de la lista de productos sea igual a los productos que se agregaron a la carta 
+#Validando que el tamaño de la lista de productos sea igual a la cantidad de productos que se agregaron a la carta 
 assert len(productos) == 6, "No se encontro el numero de productos"
 driver.quit()
