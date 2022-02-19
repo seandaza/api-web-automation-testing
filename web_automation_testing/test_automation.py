@@ -1,4 +1,3 @@
-import requests
 import re
 import time
 from selenium import webdriver
@@ -18,13 +17,11 @@ opts.add_argument("user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36
 driver = webdriver.Chrome('web_automation_testing\chromedriver.exe', chrome_options=opts) 
 driver.maximize_window()
 
-
 #Identificando el url de la pagina
 url = "https://www.demoblaze.com/"
 
 #Abriendo la pagina
 driver.get(url)
-
 
 n = 0
 productos = []
