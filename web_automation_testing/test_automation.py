@@ -84,6 +84,9 @@ for i in range(1,4):
         button.click()
         time.sleep(2)
         
+        #Validando que se agrega el producto a la carta
+        assert Alert(driver2).text == "Product added", "No se encontro el mensaje de producto agregado"
+        
         #Aceptando la alerta de "Product added"
         Alert(driver2).accept()
         time.sleep(1)
