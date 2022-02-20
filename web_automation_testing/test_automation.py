@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
@@ -35,8 +36,13 @@ for i in range(1,4):
     #Validando que entra a las categorias
     assert link.text == categorias[i-1], "No se encontro la categoria"
     time.sleep(1)
-    link.click()
-    time.sleep(1)
+    try:
+        link.click()
+        time.sleep(1)
+    except WebDriverException as e:
+        print("No se pudo abrir la pagina de la categoria: ", categorias[i-1])
+        print(e)
+        time.sleep(1)
     
     #Indexando los productos por seleccionar
     index = [3,4,8,11,10,14]
@@ -78,15 +84,20 @@ for i in range(1,4):
         productos.append(name)
         
         #Dar click en el boton de agregar al carrito
-        button.click()
-        time.sleep(2)
+        try:
+            button.click()
+            time.sleep(2)
+        except WebDriverException as e:
+            print("No se pudo agregar el producto: ", name)
+            print(e)
+            time.sleep(2)
         
         #Validando que se agrega el producto a la carta
         assert Alert(driver2).text == "Product added", "No se encontro el mensaje de producto agregado"
         
         #Aceptando la alerta de "Product added"
         Alert(driver2).accept()
-        time.sleep(1)
+        time.sleep(2)
         
         #checkando que se agrego el producto a la carta
         cart = driver2.find_element_by_xpath('//*[@id="cartur"]')
@@ -95,6 +106,6 @@ for i in range(1,4):
         driver2.quit()
 time.sleep(1)
 
-#Validando que el tamaño de la lista de productos sea igual a la cantidad de productos que se agregaron a la carta 
+#Validando que el tamaño de la lista de productos sea igual a la cantidad de  productos que se agregaron a la carta 
 assert len(productos) == 6, "No se encontro el numero de productos"
 driver.quit()
