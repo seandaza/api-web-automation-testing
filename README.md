@@ -1,10 +1,10 @@
 
 # api & web-automation-testing
-Automatizacion de un API para diferentes endpoints y Automatización de una búsqueda y agregado de productos de una tienda virtual
+Automation of an API for different endpoints and automation of a search and addition of products from a virtual store.
 
-# Instalar dependencias:
+# Install dependencies:
 1. Python3
-2. libreria requests
-3. libreria selenium
-4. jsonpath
-5. descargar chromedriver de acuerdo a la version del Chrome de su máquina.
+2. pip install requests
+3. pip install selenium
+4. pip install jsonpath
+5. Download chromedriver according to the version of Chrome on your machine.
